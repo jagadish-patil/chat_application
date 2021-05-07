@@ -1,3 +1,4 @@
+import LoginForm from './LoginForm';
 import MessageForm from './MessageForm';
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
@@ -43,7 +44,14 @@ const ChatFeed = (props) => {
                 </div>
             );
         })
-    }    
+    }
+    
+    const handleOnClick = (e) => {         
+        localStorage.removeItem('username');
+        localStorage.removeItem('password');        
+        window.location.reload();
+        return <LoginForm />
+    }
 
     if (!chat) return 'Loading ... ';
 
@@ -52,15 +60,19 @@ const ChatFeed = (props) => {
             <div className="chat-title-container">
                 <div className="chat-title">{chat.title}</div>
                 <div className="chat-subtitle">
-                    {chat.people.map((person) => ` ${person.person.username} `)}
+                    {chat.people.map((person) => ` ${person.person.username} `)}  
+                    <div align="right">                        
+                            <button type="submit" className="logout-button" onClick={handleOnClick}>Logout</button>                        
+                    </div>
                 </div>
-            </div>
+            </div>            
             {renderMessages()}
             <div style={{ height: '100px' }} />
             <div className="message-form-container">
                 <MessageForm {...props} chatId={activeChat} />
-            </div>
+            </div>            
         </div>
+        
     );
 }
 
