@@ -12,8 +12,8 @@ const App = () => {
         <ChatEngine 
             height="100vh"
             projectID="ad18867e-3abb-47ce-a980-db70f348d39e"
-            userName="jagadishpatil"
-            userSecret="jp321"
+            userName={localStorage.getItem('username')}
+            userSecret={localStorage.getItem('password')}
             renderChatFeed={(chatAppProps) => <ChatFeed { ...chatAppProps } />}
          />        
     );
