@@ -36,13 +36,13 @@ const LoginForm = () => {
                             <span>Start Chatting</span>
                         </button> <br/>
                         <label>Test Credentials 1: <br/>
-                            Username = test123
-                            Password = test123
+                            Username = anand123
+                            Password = ap321
                         </label>
                         <br/>
                         <label>Test Credentials 2: <br/>
-                            Username = hello123
-                            Password = 12345
+                            Username = deepapatil
+                            Password = dp321
                         </label>
                     </div>
                     <h2 className="error">{error}</h2>
